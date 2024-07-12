@@ -1,48 +1,8 @@
-import styled, {css, keyframes} from "styled-components";
+import styled, {css} from "styled-components";
 import Button from "./Button";
 import {UI_ACTION_TYPE, useUiDispatch} from "../context/UiReducer";
-import {useEffect, useState} from "react";
 import {CSSTransition} from "react-transition-group";
-
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-`
-
-const fadeOut = keyframes`
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-`
-
-const scaleUp = keyframes`
-  0% {
-    transform: scale(0.975);
-  }
-  
-  100% {
-    transform: scale(1);
-  }
-`
-
-const scaleDown = keyframes`
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(0.975);
-  }
-`
+import {fadeIn, fadeOut, scaleDown, scaleUp} from "../style/animation";
 
 const ModalStyle = styled.div`
   width: 100%;

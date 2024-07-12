@@ -8,11 +8,16 @@ export const UI_ACTION_TYPE = {
 
   alert_message_add : "ALERT_MESSAGE_ADD",
   alert_message_remove: "ALERT_MESSAGE_REMOVE",
+
+  donation_modal_show: "DONATION_MODAL_SHOW",
+  donation_modal_hide: "DONATION_MODAL_HIDE",
+  donation_modal_toggle: "DONATION_MODAL_TOGGLE",
 }
 
 const uiState = {
   isModalShow: false,
-  alertMessage: []
+  alertMessage: [],
+  isDonationModalShow: false,
 }
 
 function reducer(state, action) {
@@ -32,6 +37,7 @@ function reducer(state, action) {
         ...state,
         isModalShow: !state.isModalShow
       }
+
     case UI_ACTION_TYPE.alert_message_add:
       return {
         ...state,
@@ -41,6 +47,22 @@ function reducer(state, action) {
       return {
         ...state,
         alertMessage: state.alertMessage.filter(m => m.id !== action.id)
+      }
+
+    case UI_ACTION_TYPE.donation_modal_show:
+      return {
+        ...state,
+        isDonationModalShow: true
+      }
+    case UI_ACTION_TYPE.donation_modal_hide:
+      return {
+        ...state,
+        isDonationModalShow: false
+      }
+    case UI_ACTION_TYPE.donation_modal_toggle:
+      return {
+        ...state,
+        isDonationModalShow: !state.isDonationModalShow
       }
     default:
       throw "Undefined ui reducer action type"

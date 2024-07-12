@@ -176,6 +176,7 @@ export const BusinessCard = ({onMouseMove, onMouseOut, cardState}) => {
   }
 
   const onEmailCopy = () => {
+    // uiDispatch({type: UI_ACTION_TYPE.donation_modal_show})
     navigator.clipboard.writeText("me@kichan.dev").then(() => {
       uiDispatch({
         type: UI_ACTION_TYPE.alert_message_add,
