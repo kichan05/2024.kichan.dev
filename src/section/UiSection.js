@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Modal from "../component/Modal";
 import {useUiState} from "../context/UiReducer";
 import Alert from "../component/Alert";
+import {DonationModal} from "../component/DonationModal";
 
 const UiSectionStyle = styled.section`
   width: 100%;
@@ -21,6 +22,7 @@ const UiSection = () => {
     <UiSectionStyle>
       <Modal isShow={uiState.isModalShow}/>
       <Alert alertMessage={uiState.alertMessage}/>
+      <DonationModal isShow={uiState.isDonationModalShow}/>
     </UiSectionStyle>
   )
 }
